@@ -7,6 +7,5 @@ func main() {
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{"this": "works"})
 	})
-	r.Run(":3000")
+	r.Run(":5000")
 }
-
