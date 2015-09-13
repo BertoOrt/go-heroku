@@ -58,6 +58,7 @@ func main() {
 	})
 
 	r.GET("/cleardb", func(c *gin.Context) {
+		// col.RemoveAll(nil)
 		col.DropCollection()
 		c.Redirect(http.StatusMovedPermanently, "/")
 	})
