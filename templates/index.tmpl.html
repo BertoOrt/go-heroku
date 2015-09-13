@@ -1,0 +1,23 @@
+<html>
+  {{template "header.tmpl.html"}}
+<body>
+  <h1>Mongo</h1>
+  <ul>
+    {{ $length := len .title }}
+    {{if eq $length 0}}
+      <p>
+        No names entered
+      </p>
+    {{else }}
+      {{range $key, $value := .title}}
+        <li> {{$value.Name}} </li>
+      {{ end }}
+    {{end}}
+  </ul>
+  <form class='form-inline' action="/" method="post">
+    <input class='form-control' type="text" name="name" autofocus>
+    <input class='btn btn-warning' type="submit" name="name" value="Save!">
+  </form>
+  <a href="/cleardb" class='btn btn-danger'> Delete</a>
+</body>
+</html>
