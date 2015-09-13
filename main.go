@@ -18,7 +18,7 @@ type Entry struct {
 }
 
 func main() {
-	session, err := mgo.Dial("localhost")
+	session, err := mgo.Dial("MONGOLAB_URI")
 	col := session.DB("go-test").C("names")
 	if err != nil {
 		panic(err)
